@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
           child: Text('Welcome to $nums $name case...'),
         ),
       ),
+      drawer: const Drawer(),
     );
   }
 }
