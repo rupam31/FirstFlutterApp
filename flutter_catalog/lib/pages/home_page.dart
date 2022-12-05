@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   final int nums = 30;
@@ -16,7 +18,7 @@ class HomePage extends StatelessWidget {
           child: Text('Welcome to $nums $name case...'),
         ),
       ),
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
