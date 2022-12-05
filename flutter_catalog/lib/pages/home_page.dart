@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/models/catalog.dart';
 
 import '../widgets/drawer.dart';
+import '../widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,18 +11,23 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(25, (index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catalog App'),
       ),
-      body: Center(
-        child: Container(
-          child: Text('Welcome to $nums $name case...'),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: dummyList[index],
+            );
+          },
         ),
       ),
       drawer: const MyDrawer(),
     );
   }
 }
-
-// Day 11 learned about Context and Constraints
