@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
+        // ignore: unnecessary_null_comparison
         child: (CatalogModel.items !=null && CatalogModel.items.isNotEmpty)
             ? ListView.builder(
                 itemCount: CatalogModel.items.length,
